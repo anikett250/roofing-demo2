@@ -10,7 +10,11 @@ const items = [
     "Safety Compliance and Roof Repair Documentation",
 ];
 
-const ArrowIcon = ({ active }) => (
+type ArrowIconProps = {
+    active: boolean;
+};
+
+const ArrowIcon = ({ active }: ArrowIconProps) => (
     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
             d="M2.5 6H9.5M6.5 3L9.5 6L6.5 9"
@@ -23,7 +27,7 @@ const ArrowIcon = ({ active }) => (
 );
 
 export default function Learnmore() {
-    const [hovered, setHovered] = useState(null);
+    const [hovered, setHovered] = useState<number | null>(null);
 
     return (
         <motion.div className=""
