@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { useState, type ChangeEvent } from "react";
 import { Poppins } from "next/font/google"
 import { motion } from "framer-motion";
 
@@ -24,8 +24,9 @@ export default function Contact() {
         street: "", city: "", state: "", zip: "", smsConsent: false,
     });
 
-    const handleChange = (e) => {
-        const { name, value, type, checked } = e.target;
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name, value, type } = e.target;
+        const checked = type === "checkbox" ? (e.target as HTMLInputElement).checked : false;
         setForm((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
     };
 
