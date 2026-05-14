@@ -36,10 +36,10 @@ export default function Learnmore() {
             transition={{ duration: 1.2 }}
             viewport={{ once: true }}
         >
-            <div className="text-[#0F1C49] text-[60px] font-semibold text-center ">
+            <div className="text-[#0F1C49] text-[36px] md:text-[60px] font-semibold text-center">
                 Learn More
             </div>
-            <div className="flex flex-col gap-2 p-3 mx-100 ">
+            <div className="flex flex-col gap-2 p-3 mx-4 md:mx-100">
                 {items.map((item, i) => {
                     const isActive = i === 0;
                     return (
@@ -48,29 +48,29 @@ export default function Learnmore() {
                             onMouseEnter={() => setHovered(i)}
                             onMouseLeave={() => setHovered(null)}
                             className={`
-              flex items-center justify-between
-              rounded-xl px-5 py-4 cursor-pointer
-              border transition-colors duration-150
-              ${isActive
+                        flex items-center justify-between
+                        rounded-xl px-5 py-4 cursor-pointer
+                        border transition-colors duration-150
+                        ${isActive
                                     ? "bg-orange-50 border-orange-200"
                                     : hovered === i
                                         ? "bg-gray-50 border-gray-200"
                                         : "bg-white border-gray-200"
                                 }
-            `}
+                    `}
                         >
                             <span
-                                className={`text-[15px] font-normal leading-snug ${isActive ? "text-orange-600" : "text-gray-900"
+                                className={`text-[14px] md:text-[15px] font-normal leading-snug ${isActive ? "text-orange-600" : "text-gray-900"
                                     }`}
                             >
                                 {item}
                             </span>
                             <div
                                 className={`
-                flex-shrink-0 ml-3 w-7 h-7 rounded-full
-                flex items-center justify-center border
-                ${isActive ? "border-orange-300" : "border-gray-300"}
-              `}
+                            flex-shrink-0 ml-3 w-7 h-7 rounded-full
+                            flex items-center justify-center border
+                            ${isActive ? "border-orange-300" : "border-gray-300"}
+                        `}
                             >
                                 <ArrowIcon active={isActive} />
                             </div>

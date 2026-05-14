@@ -40,8 +40,9 @@ export default function Contact() {
 
     return (
         <div className={`mb-50 overflow-x-hidden ${poppins.className}`}>
-            <div className="flex gap-30 mx-40 ">
-                <motion.div className="relative rounded-[30px] w-170 h-200 overflow-hidden"
+            <div className="flex flex-col-reverse md:flex-row gap-30 mx-4 md:mx-40">
+                <motion.div
+                    className="relative rounded-[30px] w-full md:w-full h-[580px] md:h-200 overflow-hidden mx-[10px] md:mx-0"
                     initial={{ x: "-100%", opacity: 0 }}
                     whileInView={{ x: "0%", opacity: 1 }}
                     transition={{ duration: 1.2 }}
@@ -53,10 +54,10 @@ export default function Contact() {
                         className="absolute inset-0 w-full h-full object-cover"
                     />
 
-                    <div className="absolute inset-0 flex items-center justify-center p-6">
-                        <div className="w-full max-w-md rounded-2xl bg-white/95 backdrop-blur-sm px-8 py-10 shadow-2xl">
+                    <div className="absolute inset-0 flex items-center justify-center p-4 md:p-6">
+                        <div className="w-full max-w-md rounded-[30px] bg-white/95 backdrop-blur-sm px-5 md:px-8 py-7 md:py-10 shadow-2xl">
 
-                            <h1 className="mb-7 text-center text-2xl font-semibold leading-tight text-gray-900">
+                            <h1 className="mb-5 md:mb-7 text-center text-2xl font-semibold leading-tight text-gray-900">
                                 Get A Professional<br />Roof Inspection!
                             </h1>
 
@@ -69,7 +70,7 @@ export default function Contact() {
                                         placeholder="Last Name" className={inputClass} />
                                 </div>
 
-                                <div className="grid grid-cols-2 gap-3">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <input name="email" type="email" value={form.email} onChange={handleChange}
                                         placeholder="Email Address" className={inputClass} />
                                     <input name="phone" type="tel" value={form.phone} onChange={handleChange}
@@ -87,8 +88,7 @@ export default function Contact() {
                                     <div className="relative">
                                         <select
                                             name="state" value={form.state} onChange={handleChange}
-                                            className={`${inputClass} appearance-none pr-8 ${form.state === "" ? "text-gray-400" : "text-gray-700"
-                                                }`}
+                                            className={`${inputClass} appearance-none pr-8 ${form.state === "" ? "text-gray-400" : "text-gray-700"}`}
                                         >
                                             <option value="" disabled hidden>Select State</option>
                                             {US_STATES.map((s) => (
@@ -126,22 +126,38 @@ export default function Contact() {
                         </div>
                     </div>
                 </motion.div>
-                <motion.div className="mt-20"
+
+                <motion.div
+                    className="mt-6 md:mt-20 px-2 md:px-0"
                     initial={{ x: "100%", opacity: 0 }}
                     whileInView={{ x: "0%", opacity: 1 }}
                     transition={{ duration: 1.2 }}
                     viewport={{ once: true }}
                 >
-                    <div className="text-[#0F1C49] font-semibold text-[70px] ">Contact RoofClaim<br /> Today</div>
-                    <div className="text-gray-700 text-[20px] ">Your roof is your home's first line of defense against the elements. Don't<br /> let small issues turn into costly repairs. Whether you need to address roof<br /> leaks, storm damage, or want to explore a complete replacement.<br /> RoofClaim is here to help.</div>
+                    <div className="text-[#0F1C49] font-semibold text-[36px] md:text-[70px] leading-tight">
+                        Contact RoofClaim Today
+                    </div>
+                    <div className="text-gray-700 text-[15px] md:text-[18px] mt-3">
+                        Your roof is your home's first line of defense against the elements. Don't
+                        let small issues turn into costly repairs. Whether you need to address roof
+                        leaks, storm damage, or want to explore a complete replacement.
+                        RoofClaim is here to help.
+                    </div>
                     <div className="flex mt-7 gap-2">
-                        <div className="w-7 mt-[1px] ">
+                        <div className="w-7 mt-[1px] flex-shrink-0">
                             <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#4B577E" d="M8 3a5 5 0 100 10A5 5 0 008 3z"></path></g></svg>
                         </div>
-                        <div className="text-[#4B577E] text-[20px] ">Call us today for you free roof inspection and discover how we can<br /> simplify you next roofing project.</div>
+                        <div className="text-[#4B577E] text-[15px] md:text-[18px]">
+                            Call us today for your free roof inspection and discover how we can
+                            simplify your next roofing project.
+                        </div>
                     </div>
-                    <div className="text-black text-[45px] mt-5 ">The RoofClaim Difference</div>
-                    <div className="text-gray-700 text-[20px] ">Choosing RoofClaim means choosing a partner dedicated to protecting<br /> your home. From start to finish, we handle you project with care, ensuring<br /> the best results.</div>
+                    <div className="text-black text-[30px] md:text-[45px] mt-5">The RoofClaim Difference</div>
+                    <div className="text-gray-700 text-[15px] md:text-[18px] mt-2">
+                        Choosing RoofClaim means choosing a partner dedicated to protecting
+                        your home. From start to finish, we handle your project with care, ensuring
+                        the best results.
+                    </div>
                 </motion.div>
             </div>
         </div>
